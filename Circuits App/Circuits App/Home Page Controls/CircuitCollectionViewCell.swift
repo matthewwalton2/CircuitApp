@@ -21,8 +21,7 @@ class CircuitCollectionViewCell: UICollectionViewCell {
         
         // Set the UILabel to display the circuit name
         circuitLabel.text = circuit.name
-        
-        
+        circuitLabel.adjustsFontSizeToFitWidth = true
     }
 
 

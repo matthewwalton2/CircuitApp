@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import CoreMedia
 
 class ViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
@@ -58,6 +59,10 @@ class ViewController: UIViewController, UICollectionViewDelegate, UICollectionVi
         
         // Push the new view controller to the navigation controller
         self.navigationController?.pushViewController(circuitViewController!, animated: true)
+        
+        // Change the title of the Navigation Controller to be the name of the selected circuit
+        let selectedCircuitName = circuitsArray[indexPath.row].name
+        self.navigationController?.topViewController?.title = selectedCircuitName
         
         // TODO: Delete this bit - FOR TESTING: Print the name of the circuit the user has selected
         let selectedCell = circuitsArray[indexPath.row]

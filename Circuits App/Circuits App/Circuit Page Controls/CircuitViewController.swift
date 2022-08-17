@@ -23,13 +23,13 @@ class CircuitViewController: UIViewController {
     let pauseImage = UIImage(named: "pauseFINAL")
     
     // Create outlets for all variable-text items
-    @IBOutlet weak var circuitNameLabel: UILabel!
     @IBOutlet weak var exerciseTitleLabel: UILabel!
     @IBOutlet weak var nextExerciseLabel: UILabel!
     
     // Initialize the Exercise Name Label/Help button
     // This is named a label, but only because it functions as a tappable label
     @IBOutlet weak var exerciseNameLabel: UIButton!
+    
     
     // Initialize outlets for the controls
     @IBOutlet weak var backButton: UIButton!
@@ -50,13 +50,10 @@ class CircuitViewController: UIViewController {
         super.viewDidLoad()
         
         // Update all labels for the circuit
-        circuitNameLabel.text = circuit?.name
         getNext(current:currentExerciseInt)
 
         // Do any additional setup after loading the view.
-        
-        // Make the Exercise Title Label support long exercise titles by adding another line of text
-        exerciseNameLabel.titleLabel?.lineBreakMode = .byWordWrapping
+        exerciseNameLabel.titleLabel?.textAlignment = .center
         
     }
     
